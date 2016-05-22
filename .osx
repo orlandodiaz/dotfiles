@@ -177,4 +177,7 @@ defaults write com.apple.CrashReporter UseUNC 1
 # Disables "Are you sure you want to open this app from the internet" annoying dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool NO
 
-
+# Enable tap to click (Trackpad) for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
