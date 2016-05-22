@@ -174,5 +174,7 @@ defaults write com.apple.Finder QuitMenuItem -bool YES
 # Send crash reports to the notification center
 defaults write com.apple.CrashReporter UseUNC 1
 
+# Disables "Are you sure you want to open this app from the internet" annoying dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool NO
 
 
