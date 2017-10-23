@@ -2,8 +2,8 @@ syntax on
 set t_Co=256
 highlight LineNr ctermfg=grey ctermbg=white
 set number
-call pathogen#infect()
-colorscheme mac_classic
+colorscheme mac_classic "Mac classic theme
+set display+=lastline "Removes at signs from the end of the editor
 
 :map <ScrollWheelUp> <C-Y>
 :map <S-ScrollWheelUp> <C-U>
