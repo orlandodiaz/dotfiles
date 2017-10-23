@@ -33,7 +33,7 @@ function items() {
   echo $[$cnt-4]
 }
 
-cd() { builtin cd "$@" && ~/els; }
+cd() { builtin cd "$@" && ~/code/dotfiles/els; }
 
 function lss() {
   items=$(/bin/ls -afq -l | wc -l)
@@ -45,7 +45,7 @@ function lss() {
 }
 
 # list directories including icons
-alias ls="~/els"\
+alias ls="~/code/dotfiles/els"\
 " -I .DS_tore"
 
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
