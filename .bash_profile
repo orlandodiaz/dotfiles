@@ -17,8 +17,21 @@ export PS1="$: "
 #export PS1="💻  \[\e[34m\]\h\[\e[0m\] \[\e[32m\]📒  \w\[\e[0m\]] "
 #export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxBxegedabagabad # Doesn't seem to work in conjunction with els at the moment. Find a way to fix that
 
+##############################################################################
+#                                 COLORS
+##############################################################################
+
+export LSCOLORS=ExFxBxDxBxegedabagabad # Dont work in conjunction with els at the moment. Find a way to fix that
+
+
+
+
+
+
+##############################################################################
+#                                ALIASES
+##############################################################################
 
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
