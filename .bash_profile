@@ -9,7 +9,12 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH=$PATH:$JAVA_HOME/bin
 
-#export PS1="└─╼ $USER"
+##############################################################################
+#                                 COLORS
+##############################################################################
+
+export LSCOLORS=ExFxBxDxBxegedabagabad # Dont work in conjunction with els at the moment. Find a way to fix that
+
 export PS1="$: "
 #export PS1="\[\e[1;31m\]\u\[\e[m\]@\[\e[1;32m\]\h\[\e[m\] \[\e[1;34m\][\W]\e[m\] "
 #PS1='\[\e[1;91m\][\u@\h \w]\$\[\e[0m\] '
@@ -18,14 +23,13 @@ export PS1="$: "
 #export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 
-##############################################################################
-#                                 COLORS
-##############################################################################
+export PS1="$: "
+#export PS1="\[\e[1;31m\]\u\[\e[m\]@\[\e[1;32m\]\h\[\e[m\] \[\e[1;34m\][\W]\e[m\] "
+#PS1='\[\e[1;91m\][\u@\h \w]\$\[\e[0m\] '
 
-export LSCOLORS=ExFxBxDxBxegedabagabad # Dont work in conjunction with els at the moment. Find a way to fix that
-
-
-
+#export PS1="💻  \[\e[34m\]\h\[\e[0m\] \[\e[32m\]📒  \w\[\e[0m\]] "
+#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
 
 
 
@@ -37,10 +41,25 @@ export LSCOLORS=ExFxBxDxBxegedabagabad # Dont work in conjunction with els at th
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
-#alias cd..=cd ..
 
 #alias items="/bin/ls -afq -l | wc -l" #counts the number of files
 
+# list directories including icons
+alias ls="~/code/dotfiles/els"\
+" -I .DS_tore"
+
+alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+
+#alias ‘ls=‘~/els
+#alias ls=~/elsd | cut -c1-20 | column -c"${COLUMNS:-80}"
+
+
+alias code="cd ~/code"
+###############################################################################
+#                               FUNCTIONS
+###############################################################################
+
+# Counts the number of files (including directories) in the current directory
 function items() {
   cnt=$(/bin/ls -afq -l | wc -l)
   echo $[$cnt-4]
@@ -57,18 +76,10 @@ function lss() {
   fi
 }
 
-# list directories including icons
-alias ls="~/code/dotfiles/els"\
-" -I .DS_tore"
 
-alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
-
-#alias ‘ls=‘~/els
-#alias ls=~/elsd | cut -c1-20 | column -c"${COLUMNS:-80}"
-
-
-source /Applications/MacKichan/MSITeX.bash
-
+################################################################################
+#                               PATH
+################################################################################
 export PATH
 
 # Setting PATH for Python 2.7
@@ -76,23 +87,17 @@ export PATH
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH=$PATH:/Users/system-void/Desktop/sshconnet/
 
+
 #PATH="/Users/system-void/Desktop/sshconnet/acsm-connect"
 export PATH
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-##
-# Your previous /Users/system-void/.bash_profile file was backed up as /Users/system-void/.bash_profile.macports-saved_2017-07-05_at_20:00:45
-##
-
 # MacPorts Installer addition on 2017-07-05_at_20:00:45: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
-
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
-
-alias code="cd ~/code"

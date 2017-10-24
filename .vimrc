@@ -1,3 +1,13 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                      GENERAL
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+set report=0 "Always displays the count of lines yanked
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       COLORS
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 syntax on
 set t_Co=256
 highlight LineNr ctermfg=grey ctermbg=white
