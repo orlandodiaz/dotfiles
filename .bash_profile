@@ -1,13 +1,15 @@
+#@IgnoreInspection BashAddShebang
 
 export CLICOLOR=1
 export TERM=xterm-256color
 
-# puts a title in the terminal window
+# Puts a title in the terminal window
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
-export JAVA_HOME=$(/usr/libexec/java_home)
 
-export PATH=$PATH:$JAVA_HOME/bin
+################################ JAVA ########################################
+#export JAVA_HOME=$(/usr/libexec/java_home)
+#export PATH=$PATH:$JAVA_HOME/bin
 
 ##############################################################################
 #                                 COLORS
@@ -35,9 +37,9 @@ export CLICOLOR=1
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-#test -e ~/.dircolors && \ 
+#test -e ~/.dircolors && \
 #   eval `dircolors -b ~/.dircolors`
-#alias ls="ls --color=always" 
+#alias ls="ls --color=always"
 #alias grep="grep --color=always"
 #alias egrep="egrep --color=always"
 
@@ -48,12 +50,6 @@ HI="[\033[0;37m]" #change this for letter colors
 HII="[\033[0;31m]" #change this for letter colors
 SI="[\033[0;33m]" #this is for the current directory
 IN="[\033[0m]"
-
-
-
-
-
-
 
 
 ##############################################################################
@@ -101,8 +97,9 @@ function lss() {
 }
 
 function ff() {
-  finder_path = $("/Users/orr/gdrive/home/dots/sc/apple2.sh")
-  cd $finder_path
+  finder_path=$(/Users/orr/gdrive/home/dots/sc/get_finder_path.sh)
+#  echo $finder_path
+  cd "$finder_path"
 }
 ################################################################################
 #                               PATH
