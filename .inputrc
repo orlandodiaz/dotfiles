@@ -1,4 +1,5 @@
 ######### .input.rc ################
-# make the up and down arrows cycle through commands that match the start of a line
+
+# Makes the up and down arrows cycle through commands that match the start of a line
 "\e[A": history-search-backward
 "\e[B": history-search-forward

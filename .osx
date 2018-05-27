@@ -1,3 +1,5 @@
+# Default OS X Settings for OS X mavericks. Note tested in High sierra
+
 #!/usr/bin/env bash
 # See doc http://ss64.com/osx/defaults.html
 
