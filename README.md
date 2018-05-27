@@ -1,12 +1,14 @@
 # Installation
 
-Create symbolic links to these files pointing to your home directory. Note: Don't use relative paths or
-things will get hairy.
+It's recommended you use the setup.py to install your dotfiles.
+
+Otherwise:
+Create symbolic links to these files pointing to your home directory. Note: Don't use relative paths as this will cause symlinks to fail.
 
 ```
-ln -s /Users/system-void/code/dotfiles/.vimrc ~/
-ln -s /Users/system-void/code/dotfiles/.inputrc ~/
-ln -s /Users/system-void/code/dotfiles/.vim ~/
-ln -s /Users/system-void/code/dotfiles/.bash_profile ~/
+ln -s /Users/orr/code/dotfiles/.vimrc ~/
+ln -s /Users/orr/code/dotfiles/.inputrc ~/
+ln -s /Users/orr/code/dotfiles/.vim ~/
+ln -s /Users/orr/code/dotfiles/.bash_profile ~/
 ```
 
