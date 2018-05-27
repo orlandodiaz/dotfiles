@@ -5,12 +5,13 @@ import logging as log
 HOME = os.environ['HOME']
 DOT_FOLDER = "{}/gdrive/home/dots".format(HOME)
 
-# Log to console setings
+# Log to console setingsy
 # set up log to console
 console = log.StreamHandler()
 console.setLevel(log.INFO)
 # set a format which is simpler for console use
 formatter = log.Formatter('[%(asctime)s %(filename)18s] %(levelname)-7s - %(message)7s',
+                          "y"
                           "%Y-%m-%d %H:%M:%S")
 console.setFormatter(formatter)
 # add the handler to the root logger
@@ -51,7 +52,7 @@ if __name__ == '__main__':
                            "{}/{}".format(HOME, filename)
                            )
             except OSError as ex:
-                print 'Error: File exists'
+                print ex
 
             else:
                 print 'Success'

@@ -1,6 +1,6 @@
-# Default OS X Settings for OS X mavericks. Note tested in High sierra
-
 #!/usr/bin/env bash
+
+# Default OS X Settings for OS X mavericks. Note tested in High sierra
 # See doc http://ss64.com/osx/defaults.html
 
 # Keyboard behavior
@@ -79,9 +79,9 @@ defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
-#Doesn't work
-defaults write com.apple.menuextra.battery ShowPercent -string “NO”
-defaults write com.apple.menuextra.battery ShowTime -string “YES”
+#Not tested. Make sure not to use smart quotes
+#defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+#defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 #Doesnt work
 defaults write com.apple.Safari CanPromptForPushNotifications -bool false
@@ -98,11 +98,11 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # iTunes
 ###############################################################################
 
-# Make Command + F focus the search bar
-defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add “Target Search Field” “@F”
+# Make Command + F focus the search bar. Doesnt seem to be an issue in Itunes 12
+#defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
 # Enable half-star ratings
-defaults write com.apple.iTunes allow-half-stars -bool TRUE
+#defaults write com.apple.iTunes allow-half-stars -bool TRUE
 
 ###############################################################################
 # Activity Monitor

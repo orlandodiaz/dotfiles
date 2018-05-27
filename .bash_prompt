@@ -1,0 +1,57 @@
+#@IgnoreInspection BashAddShebang
+
+##############################################################################
+#                                 PROMPT
+##############################################################################
+
+# Syntax: export PS1=" "
+# \u    username
+# \h    hostname
+# \W    current working directory
+# \w    full path to current working directory
+# \d    date ("Tue May 26")
+# To add your custom functions use \$(your_function)
+
+# PROMPT_COMMAND    executes before the prompt
+
+RED='\033[0;31m'
+RED2='\[\033[0;31m\]'   # Red
+NC='\033[0m'            # No Color. You must put this at the end
+
+# Get current branch
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1="\u@\H \W: ${RED} \T ${NC}\$(parse_git_branch) ${NC}"
+
+# Puts a title in the terminal window
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+
+
+
+
+#export PS1="\[\e[1;31m\]\u\[\e[m\]@\[\e[1;32m\]\h\[\e[m\] \[\e[1;34m\][\W]\e[m\] "
+#PS1='\[\e[1;91m\][\u@\h \w]\$\[\e[0m\] '
+
+#export PS1="💻  \[\e[34m\]\h\[\e[0m\] \[\e[32m\]📒  \w\[\e[0m\]] "
+#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+
+#export PS1="$: "
+#export PS1="\[\e[1;31m\]\u\[\e[m\]@\[\e[1;32m\]\h\[\e[m\] \[\e[1;34m\][\W]\e[m\] "
+#PS1='\[\e[1;91m\][\u@\h \w]\$\[\e[0m\] '
+
+#export PS1="💻  \[\e[34m\]\h\[\e[0m\] \[\e[32m\]📒  \w\[\e[0m\]] "
+#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+
+#alias ls="ls --color=always"
+#alias grep="grep --color=always"
+#alias egrep="egrep --color=always"
+
+
+# Terminal colours (after installing GNU coreutils)
+NM="[\033[0;38m]" #means no background and white lines
+HI="[\033[0;37m]" #change this for letter colors
+HII="[\033[0;31m]" #change this for letter colors
+SI="[\033[0;33m]" #this is for the current directory
+IN="[\033[0m]"

@@ -1,0 +1,10 @@
+#@IgnoreInspection BashAddShebang
+##############################################################################
+#                                 COLORS
+##############################################################################
+
+export CLICOLOR=1   # Adds color
+export TERM=xterm-256color # Adds more colors maybe?
+
+
+#export LSCOLORS=ExFxBxDxBxegedabagabad # Dont work in conjunction with els at the moment. Find a way to fix that
