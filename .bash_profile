@@ -17,20 +17,13 @@ if [ -f ~/.bash_functions ]; then
 fi
 
 
-# list directories including icons
-#alias ls="~/code/dotfiles/els"\
-#" -I .DS_tore"
-
-
-#alias ls=~/elsd | cut -c1-20 | column -c"${COLUMNS:-80}"
-
 ################################## JAVA ######################################
 #export JAVA_HOME=$(/usr/libexec/java_home)
 #export PATH=$PATH:$JAVA_HOME/bin
 
 
 ################################################################################
-#                               PATH: Automatically added by system
+#                               PATH: AUTOMATIC
 ################################################################################
 export PATH
 
@@ -59,5 +52,9 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-#PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-#MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+################################################################################
+#                               PATH: MANUAL
+################################################################################
+
+# Use applications installed with sudo pip install xx
+export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin":$PATH
