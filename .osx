@@ -144,8 +144,11 @@ defaults write com.apple.systemuiserver menuExtras -array "/Applications/Utiliti
 defaults write NSGlobalDomain com.apple.sound.beep.feedback -float 0
 
 # Change screenshot folder to  ~/screenshots
+# Must kill Finder and SystemUIServer to work
 mkdir -p ~/screenshots
 defaults write com.apple.screencapture location ~/screenshots
+killall Finder
+killall SystemUIServer
 
 # Show scrollbars when scrolling; options: "Automatic, Always, WhenScrolling"
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
