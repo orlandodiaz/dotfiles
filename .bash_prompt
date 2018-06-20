@@ -14,8 +14,8 @@
 
 # PROMPT_COMMAND    executes before the prompt
 
-RED='\033[0;31m'
-RED2='\[\033[0;31m\]'   # Red
+red='\033[0;31m'
+red2='\[\033[0;31m\]'   # Red
 NC='\033[0m'            # No Color. You must put this at the end
 
 # Get current branch
@@ -23,10 +23,30 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="\u@\H \W: ${RED} \T ${NC}\$(parse_git_branch) ${NC}"
+#function prompt_left() {
+#  echo -e "\033[0;35m  ${RANDOM}\033[0m"
+#}
+#
+#function prompt_right() {
+#  echo -e "\033[0;36m \T $(echo ${RANDOM})\033[0m"
+#}
+#
+#
+#function prompt() {
+#    compensate=11
+#    PS1=$(printf "%*s\r%s\n\ $ " "$(($(tput cols)+${compensate}))" "$(prompt_right)")
+#}
+#export PROMPT_COMMAND=prompt
+
+prompt() {
+     PS1=$(printf "%*s\r%s\n\\u@\H \W: ${NC}\$(parse_git_branch)${NC} " "$[$(tput cols)-25]" '$(date)' '');
+}
+PROMPT_COMMAND=prompt
+
+#export PS1="\u@\H \W: ${red} \T ${NC}\$(parse_git_branch) ${NC}"
 
 # Puts a title in the terminal window
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+#export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
 
 
@@ -47,11 +67,3 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 #alias ls="ls --color=always"
 #alias grep="grep --color=always"
 #alias egrep="egrep --color=always"
-
-
-# Terminal colours (after installing GNU coreutils)
-NM="[\033[0;38m]" #means no background and white lines
-HI="[\033[0;37m]" #change this for letter colors
-HII="[\033[0;31m]" #change this for letter colors
-SI="[\033[0;33m]" #this is for the current directory
-IN="[\033[0m]"

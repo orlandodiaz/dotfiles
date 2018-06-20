@@ -15,7 +15,8 @@ fi
 if [ -f ~/.bash_functions ]; then
     source ~/.bash_functions
 fi
-
+################################### STARTUP###################################
+uptime
 
 ################################## JAVA ######################################
 #export JAVA_HOME=$(/usr/libexec/java_home)
