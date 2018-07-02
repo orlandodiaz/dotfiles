@@ -3,34 +3,16 @@
 # Default OS X Settings for OS X mavericks. Note tested in High sierra
 # See doc http://ss64.com/osx/defaults.html
 
-# Keyboard behavior
+###############################################################################
+# Keyboard
+###############################################################################
 defaults write -g ApplePressAndHoldEnabled -bool false # Disable press-and-hold for keys in favor of key repeat
 defaults write -g InitialKeyRepeat -int 15 # Delay before repeating: normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 0 # Set a blazingly fast keyboard repeat rate /normal minimum is 2 (30 ms)
 
-# Desktop behavior
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true 
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
-# Finder behavior
-
-# New window target Computer: `PfCm`, Volume: `PfVo`, $HOME : `PfHm`
-# Desktop      : `PfDe`
-# Documents    : `PfDo`
-# All My Files : `PfAF`
-# Other…       : `PfLo`
-# For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfCm"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
-
-
-# show ejectables, removables, servers
-defaults write com.apple.sidebarlists systemitems -dict-add ShowEjectables -bool true
-defaults write com.apple.sidebarlists systemitems -dict-add ShowRemovable -bool true
-defaults write com.apple.sidebarlists systemitems -dict-add ShowServers -bool true
-defaults write com.apple.sidebarlists systemitems -dict-add ShowHardDisks -bool true # do not show hard disks
+###############################################################################
+# Finder
+###############################################################################
 
 defaults write com.apple.finder AppleShowAllFiles -bool true # Show hidden files
 defaults write com.apple.finder ShowStatusBar -bool true # Show status bar
@@ -44,8 +26,32 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # Dis
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 defaults write com.apple.frameworks.diskimages skip-verify -bool true # Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true # Disable disk image verification 
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true # Disable disk image verification
+
+
+# Desktop behavior
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true 
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+# show ejectables, removables, servers
+defaults write com.apple.sidebarlists systemitems -dict-add ShowEjectables -bool true
+defaults write com.apple.sidebarlists systemitems -dict-add ShowRemovable -bool true
+defaults write com.apple.sidebarlists systemitems -dict-add ShowServers -bool true
+defaults write com.apple.sidebarlists systemitems -dict-add ShowHardDisks -bool true # do not show hard disks
+
+# Finder behavior
+
+# New window target Computer: `PfCm`, Volume: `PfVo`, $HOME : `PfHm`
+# Desktop      : `PfDe`
+# Documents    : `PfDo`
+# All My Files : `PfAF`
+# Other…       : `PfLo`
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfCm"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 
 # Show the ~/Library folder
@@ -71,20 +77,12 @@ defaults write com.apple.dock expose-animation-duration -float 0.2
 defaults write com.apple.dock wvous-bl-corner -int 4
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
-# Set home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string 'about:blank'
-
-# Hide Safari’s sidebar in Top Sites
-defaults write com.apple.Safari ShowSidebarInTopSites -bool false
-
-defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 #Not tested. Make sure not to use smart quotes
 #defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 #defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
-#Doesnt work
-defaults write com.apple.Safari CanPromptForPushNotifications -bool false
+
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -93,6 +91,27 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 #NOT WORKING
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+
+###############################################################################
+# Safari
+###############################################################################
+
+# Set home page to `about:blank` for faster loading
+defaults write com.apple.Safari HomePage -string 'about:blank'
+
+# Hide Safari’s sidebar in Top Sites
+defaults write com.apple.Safari ShowSidebarInTopSites -bool false
+
+defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+
+# Disable Safari website notifications. !! Not tested
+defaults write com.apple.Safari CanPromptForPushNotifications -bool false
+
+# Opens a New window in the about:blank page
+defaults write com.apple.Safari NewWindowBehavior -int 1
+defaults write com.apple.Safari NewTabBehavior -int 1
+
 
 ###############################################################################
 # iTunes
@@ -121,12 +140,6 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ##############################################################################
 # OTHER
 ##############################################################################
-
-# Opens a New window in the about:blank page
-defaults write com.apple.Safari NewWindowBehavior -int 1
-
-
-defaults write com.apple.Safari NewTabBehavior -int 1
 
 
 # Enable Dock magnification
