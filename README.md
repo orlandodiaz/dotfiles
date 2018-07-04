@@ -1,7 +1,15 @@
 # Installation
 
-It's recommended you use the setup.py to install your dotfiles.
+## Using Setup
+Put the dotfiles folder anywhere but your naked home directory.
+Ex. ~/code/dotfiles
+`git clone [repository] ~/code`
 
+Run `setup.py` on the dotfiles folder to symlink the files to your home directory.
+
+`./setup.py`
+
+## Manually
 Otherwise:
 Create symbolic links to these files pointing to your home directory. Note: Don't use relative paths as this will cause symlinks to fail.
 
