@@ -1,4 +1,5 @@
-# Installation
+# Dotfiles (OSX)
+![Desktop](desktop.png "Desktop")
 
 ## Using Setup
 Put the dotfiles folder anywhere but your naked home directory.
