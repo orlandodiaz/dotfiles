@@ -39,7 +39,7 @@ parse_git_branch() {
 #export PROMPT_COMMAND=prompt
 
 prompt() {
-     PS1=$(printf "%*s\r%s\n\\u@\H \W: ${NC}\$(parse_git_branch)${NC} " "$[$(tput cols)-25]" '$(date)' '');
+     PS1=$(printf "%*s\r%s\n\\u@\H \W: \$(parse_git_branch) " "$[$(tput cols)-5]" "$(date)");
 }
 PROMPT_COMMAND=prompt
 
