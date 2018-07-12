@@ -1,19 +1,26 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "                      GENERAL
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 set report=0 "Always displays the count of lines yanked
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"                       COLORS
+"                       THEMING
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-
+"Enable syntax highlighting"
 syntax on
+
+"Enables 256 colors"
 set t_Co=256
-highlight LineNr ctermfg=grey ctermbg=white
+
+"Displays line numberS"
 set number
-colorscheme mac_classic "Mac classic theme
-set display+=lastline "Removes at signs from the end of the editor
+
+"Choose a theme"
+colorscheme lime
+
+"Remove at signs from end of editor"
+set display+=lastline
 
 :map <ScrollWheelUp> <C-Y>
 :map <S-ScrollWheelUp> <C-U>
@@ -32,3 +39,17 @@ set display+=lastline "Removes at signs from the end of the editor
 :nmap <ScrollWheelRight> <nop>
 :nmap <S-ScrollWheelRight> <nop>
 :nmap <C-ScrollWheelRight> <nop>
+
+"Sync vims copy-paste mechanism  with OSX clipboard"
+set clipboard=unnamed
+
+"filetype plugin indent on
+" show existing tab with 4 spaces width
+"set tabstop=4
+" when indenting with '>', use 4 spaces width
+"set shiftwidth=4
+" On pressing tab, insert 4 spaces
+"set expandtab
+
+set backspace=indent,eol,start
+
