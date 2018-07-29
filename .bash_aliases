@@ -1,6 +1,22 @@
 #@IgnoreInspection BashAddShebang
-alias cd..=cd ..
+
+############################## Shortcuts ###################################################
+alias home="cd ~"
+alias ghome="cd ~/gdrive/home"
+alias desktop="cd ~/Desktop"
+alias downloads="cd ~/Downloads"
+alias gdrive="cd ~/gdrive"
 alias code="cd ~/gdrive/home/code"
+alias dots="cd ~/gdrive/home/dots"
+alias play="cd ~/gdrive/home/play"
+
+
+
+###########################################################################################
+alias cd..="cd .."
+alias cd...="cd ..."
+alias cd....="cd ...."
+##########################################################################################
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 
 # list directories including icons
@@ -8,7 +24,7 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 
 #alias ls=~/elsd | cut -c1-20 | column -c"${COLUMNS:-80}"
 
-############################### Listing directories #######################################
+############################### ls #######################################
 ls=""
 # Use GNU ls instead
 ls+="gls "
@@ -16,8 +32,43 @@ ls+="gls "
 ls+="--group-directories-first "
 # Add colors
 ls+="--color=auto "
-# Add forward slashes to folders and @ to symbolic links ,etc
+# Add forward slashes to folders and @ signs to symlinks
 ls+="-F "
+# No quotes around directories and files with spaces
+ls+="-N "
+# Display file sizes in readable format, e.g. 1k, 100MB, 1G
+ls+="-h "
+# Add an inode column
+#ls+="-i "
 
 alias ls=$ls
+
+########################### rm #########################################
+rm=""
+# Use GNU rm instead
+rm+="grm "
+
+# Prompt when removing files and directories (3+ files only) y for yes, n for no
+rm+="-I"
+alias rm=$rm
+
+long_ls() {
+
+local VAR="Inode|Permissions|Owner|Group|Size|Modified|Name"
+
+if [ ! "${1}" ]; then
+   echo -e "$VAR" | column -t -s"|" && $ls -l
+else
+   echo -e "$VAR" | column -t -s"|" && $ls -l -i"${1}"
+fi
+
+}
+
+
+alias lls=$"long_ls ${1}"
 #########################################################################
+
+
+############################### exa #######################################
+
+alias lx="exa -l --header --group --created --modified --accessed --inode --color=never -F --group-directories-first"
