@@ -3,7 +3,8 @@ import sys
 import logging as log
 
 HOME = os.environ['HOME']
-DOT_FOLDER = "{}/gdrive/home/dots".format(HOME)
+#DOT_FOLDER = "{}/Volumes/GoogleDrive/My Drive/home/dots".format(HOME)
+DOT_FOLDER = "/Volumes/GoogleDrive/My Drive/home/dots"
 
 # Log to console setingsy
 # set up log to console
@@ -18,6 +19,7 @@ console.setFormatter(formatter)
 log.getLogger('').addHandler(console)
 
 logger = log.getLogger(__name__)
+
 
 if __name__ == '__main__':
 
