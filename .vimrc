@@ -1,12 +1,39 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      GENERAL
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set report=0 "Always displays the count of lines yanked
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       CODE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=4 shiftwidth=4 expandtab
+
+set autoindent
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       THEMING
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Always show the status line
+set laststatus=2
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     STATUS LINE
+" Note that Spaces must be escaped with backslashes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Simple status line
+set statusline=%f\ -\ FileType:\ %y\ col:\ %c
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Enable syntax highlighting"
 syntax on
 
@@ -52,4 +79,7 @@ set clipboard=unnamed
 "set expandtab
 
 set backspace=indent,eol,start
+
+" comment current line. Use x to uncomment
+map <C-\> ^i#<Esc>j
 
