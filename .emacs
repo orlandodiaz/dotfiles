@@ -4,8 +4,17 @@
 ;; Add padding between line numbers and code
 (setq linum-format "%3d ")
 
+;; disable tabs
+(setq-default indent-tabs-mode nil)
+
+
+;; Respect UNIX tradition fo using C-h as backspace. Also C-h
+(global-set-key [(control ?h)] 'delete-backward-char)
+(global-set-key [(hyper ?h)] 'help-command)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;SHORTCUTS;;;;;;;;;;;;;;;;;;;;;
+;                  SHORTCUTS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Kill line shortcut
@@ -86,5 +95,11 @@
 (global-set-key (kbd "M-<down>") 'move-line-down)
 
 
+(put 'scroll-left 'disabled nil)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;; CODE;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
