@@ -8,7 +8,7 @@ alias downloads="cd ~/Downloads"
 alias gdrive="cd ~/gdrive"
 alias code="cd ~/gdrive/home/code"
 alias dots="cd ~/gdrive/home/dots"
-alias play="cd ~/gdrive/home/play"
+alias play="cd ~/gdrive/home/code/play"
 
 
 
@@ -23,8 +23,11 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 #alias ls="~/code/dotfiles/els -I .DS_tore"
 
 #alias ls=~/elsd | cut -c1-20 | column -c"${COLUMNS:-80}"
+############################## cd ########################################################
+
 
 ############################### ls #######################################
+# issues: gls may fail to show files in mounted filesystems such as google drive
 ls=""
 # Use GNU ls instead
 ls+="gls "
@@ -40,8 +43,13 @@ ls+="-N "
 ls+="-h "
 # Add an inode column
 #ls+="-i "
+# ignore backups (vim and emacs files created ending with a tilde)
+ls+="--ignore-backups "
+ls+="--ignore='#*'"
+
 
 alias ls=$ls
+
 
 ########################### rm #########################################
 rm=""
