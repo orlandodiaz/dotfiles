@@ -10,8 +10,46 @@ function items() {
 }
 
 # cd() { builtin cd "$@" && ~/code/dotfiles/els; }
-# cd() { builtin cd "$@" && ls; }
+ cd() { builtin cd "$@" && ls; }
 
+##############################Running source code############################
+# Currently only CLANg, and objective C is supported
+ run() {
+#    echo "you typed" $1;
+    file=$1
+
+
+    if [[ $file == *.cpp ]]; then
+#        echo "This is C++ source code"
+        g++ -std=c++11 "$@";
+
+    elif [[ $file == *.java ]]; then
+#        echo "This is java source code"
+        javac "$@";
+
+    elif [[ $file == *.m ]]; then
+#        echo "This is objective c source code"
+        gcc -framework Foundation "$@";
+    elif [[ $file == *.c ]]; then
+        gcc "$@";
+    fi
+
+    if [ $? != 0 ]; then
+        echo "Failed to compile"
+    elif [[ $file == *.java ]]; then
+#        a=""
+#        a+="java "
+#        a+='-Djava.util.logging.SimpleFormatter.format="%1\$tY-%1\$tm-%1\$td %1\$tH:%1\$tM:%1\$tS %4\$s %2\$s %5\$s%6\$s%n" '
+#        a+="${file%%.*}"
+#        $a
+        # Logging options for java. Ex 2018-08-20 17:09:31 FINE Logging main test
+        java -Djava.util.logging.SimpleFormatter.format="%1\$tY-%1\$tm-%1\$td %1\$tH:%1\$tM:%1\$tS %4\$s %2\$s %5\$s%6\$s%n" "${file%%.*}"
+    else
+        ./a.out
+    fi
+ }
+
+############################################################################
 function lss() {
   items=$(/bin/ls -afq -l | wc -l)
   if [ "$items" -gt 40 ]; then
