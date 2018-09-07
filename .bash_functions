@@ -24,28 +24,30 @@ function items() {
         g++ -std=c++11 "$@";
 
     elif [[ $file == *.java ]]; then
-#        echo "This is java source code"
-        javac "$@";
+        echo "Compiling $file ..."
+        javac "$1";
 
     elif [[ $file == *.m ]]; then
 #        echo "This is objective c source code"
         gcc -framework Foundation "$@";
     elif [[ $file == *.c ]]; then
-        gcc "$@";
+        gcc "$1";
     fi
 
     if [ $? != 0 ]; then
         echo "Failed to compile"
     elif [[ $file == *.java ]]; then
+         echo "Executing $file ..."
+
 #        a=""
 #        a+="java "
 #        a+='-Djava.util.logging.SimpleFormatter.format="%1\$tY-%1\$tm-%1\$td %1\$tH:%1\$tM:%1\$tS %4\$s %2\$s %5\$s%6\$s%n" '
 #        a+="${file%%.*}"
 #        $a
         # Logging options for java. Ex 2018-08-20 17:09:31 FINE Logging main test
-        java -Djava.util.logging.SimpleFormatter.format="%1\$tY-%1\$tm-%1\$td %1\$tH:%1\$tM:%1\$tS %4\$s %2\$s %5\$s%6\$s%n" "${file%%.*}"
+        java -Djava.util.logging.SimpleFormatter.format="%1\$tY-%1\$tm-%1\$td %1\$tH:%1\$tM:%1\$tS %4\$s %2\$s %5\$s%6\$s%n" "${file%%.*}" "$2" "$3"
     else
-        ./a.out
+        ./a.out "$2" "$3" "$4"
     fi
  }
 
