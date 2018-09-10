@@ -1,14 +1,14 @@
 #@IgnoreInspection BashAddShebang
-
+GDRIVE_HOME="/Volumes/GoogleDrive/My\ Drive/home"
 ############################## Shortcuts ###################################################
 alias home="cd ~"
-alias ghome="cd ~/gdrive/home"
+alias ghome="cd $GDRIVE_HOME"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
-alias gdrive="cd ~/gdrive"
-alias code="cd ~/gdrive/home/code"
-alias dots="cd ~/gdrive/home/dots"
-alias play="cd ~/gdrive/home/code/play"
+alias gdrive="cd /Volumes/GoogleDrive/My\ Drive"
+alias code="cd $GDRIVE_HOME/code"
+alias dots="cd $GDRIVE_HOME/dots"
+alias play="cd $GDRIVE_HOME/code/play"
 
 
 
