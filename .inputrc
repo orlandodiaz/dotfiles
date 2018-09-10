@@ -1,5 +1,22 @@
-######### .input.rc ################
+#################### .input.rc ######################################
 
 # Makes the up and down arrows cycle through commands that match the start of a line
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+
+
+
+# Map [Tab] to autocomplete and [Shift]+[Tab] to do so backwards
+# Side effect: Folders will not be printed when pressing tab
+
+#"\t": menu-complete
+#"\e[Z": menu-complete-backward
+
+
+
+
+#set editing-mode vi
+#set show-mode-in-prompt on
+
+#set vi-ins-mode-string \1\e[6 q\2
+#set vi-cmd-mode-string \1\e[2 q\2
