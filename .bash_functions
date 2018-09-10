@@ -47,6 +47,7 @@ function items() {
         # Logging options for java. Ex 2018-08-20 17:09:31 FINE Logging main test
         java -Djava.util.logging.SimpleFormatter.format="%1\$tY-%1\$tm-%1\$td %1\$tH:%1\$tM:%1\$tS %4\$s %2\$s %5\$s%6\$s%n" "${file%%.*}" "$2" "$3"
     else
+        chmod 777 a.out #fixes issue where a.out wont be executable on google drife fs
         ./a.out "$2" "$3" "$4"
     fi
  }
