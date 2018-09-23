@@ -1,8 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-"                      GENERAL
+""                      GENERAL
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set report=0 "Always displays the count of lines yanked
-
 
 
 
@@ -10,11 +9,13 @@ set report=0 "Always displays the count of lines yanked
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       CODE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=4       "a hard TAB displays as 4 cols"
+set expandtab       "Insert spaces when hitting TAB"
+set softtabstop=4   "delete 4 spaces when hitting BACKSPACE
 
-set autoindent
-
-
+set autoindent      "Align the new line indent with the previous line
+set shiftwidth=4    "Not sure what this does yet
+set textwidth=120   "break lines longer than 79 columns
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       THEMING
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
