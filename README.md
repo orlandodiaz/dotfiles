@@ -1,4 +1,10 @@
 # Dotfiles (OSX)
+Dotfiles is own personal dotfile development environment for in OSX. It currently supports many features over a standard bash configuration.
+- Show current python environment in prmopt
+- Show current git branch in prompt
+- Shows date, exit status, and cwd of last executed command
+- Up/down arrow to browse intelligently through history
+- and more...
 <img src="dotfiles.png" height="250">
 
 ## Using Setup
