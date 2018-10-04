@@ -63,7 +63,7 @@ function lss() {
 }
 
 function ff() {
-  finder_path=$(/Users/orr/gdrive/home/dots/sc/get_finder_path.sh)
+  finder_path=$(/Users/orr/home/ghome/dots/utils/get_finder_path.sh)
 #  echo $finder_path
   cd "$finder_path"
 }
