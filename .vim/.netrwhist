@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/orr/test'
+let g:netrw_dirhist_2='/Users/orr/.emacs.d'
+let g:netrw_dirhist_3='/Users/orr/test'
+let g:netrw_dirhist_4='/Volumes/GoogleDrive/My Drive/home/code/syntax/c/IO/5lines.txt'
+let g:netrw_dirhist_5='/Users/orr/.virtualenvs'
+let g:netrw_dirhist_6='/Users/orr/.bash_sessions'
+let g:netrw_dirhist_7='/Users/orr/.secrets'
+let g:netrw_dirhist_8='/Users/orr/.SECRETS'
+let g:netrw_dirhist_9='/Users/orr/.secrets'
