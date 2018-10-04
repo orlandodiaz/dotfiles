@@ -18,6 +18,8 @@ Run `setup.py`  to symlink these dotfiles files to your home directory.
 
     python setup.py
 
+
+
 ### Manual installation
 Create symbolic links to these files pointing to your home directory. Note: Don't use relative paths as this will cause symlinks to fail.
 
@@ -27,4 +29,11 @@ ln -s /Users/YOUR_USERNAME/code/dotfiles/.inputrc ~/
 ln -s /Users/YOUR_USERNAME/code/dotfiles/.vim ~/
 ln -s /Users/YOUR_USERNAME/code/dotfiles/.bash_profile ~/
 ```
+
+## Requirements
+- Python 2.7
+
+## Exclude files
+
+You can exclude files that you don't want to be symlinked by adding them to the `exclusions` variable
 
