@@ -1,5 +1,5 @@
 # Dotfiles (OSX)
-![Desktop](desktop.png "Desktop")
+<img src="dotfiles.png" height="250">
 
 ## Using Setup
 Put the dotfiles folder anywhere but your naked home directory.
