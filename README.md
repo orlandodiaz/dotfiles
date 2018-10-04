@@ -5,7 +5,6 @@ Dotfiles is own personal dotfile development environment for in OSX. It currentl
 - Shows date, exit status, and cwd of last executed command. This is shown on the bottom right after each command
 - Up/down arrow to browse intelligently through history
 - and more...
-<img src="dotfiles.png" height="250">
 
 ### Using Setup
 Put the dotfiles folder anywhere but your naked home directory.
