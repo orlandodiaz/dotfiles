@@ -4,7 +4,7 @@ import logging as log
 
 HOME = os.environ['HOME']
 #DOT_FOLDER = "{}/Volumes/GoogleDrive/My Drive/home/dots".format(HOME)
-DOT_FOLDER = "/Volumes/GoogleDrive/My Drive/home/dots"
+DOT_FOLDER = "{}/home/ghome/dots".format(HOME)
 
 # Log to console setingsy
 # set up log to console

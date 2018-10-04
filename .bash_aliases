@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-GDRIVE_HOME="/Volumes/GoogleDrive/My\ Drive/home"
+GDRIVE_HOME="/Users/orr/home/ghome"
 ############################## Shortcuts ###################################################
 alias home="cd ~"
 alias ghome="cd $GDRIVE_HOME"
