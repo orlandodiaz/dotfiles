@@ -23,6 +23,15 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+# Get current VEV
+venv() {
+  svenv=$VIRTUAL_ENV
+  basename $svenv 2> /dev/null| sed "s/^/[/;s/$/]/"
+#  echo $str
+#  echo "$(basename $VIRTUAL_ENV)" "$(df)"
+
+}
+
 #function prompt_left() {
 #  echo -e "\033[0;35m  ${RANDOM}\033[0m"
 #}
@@ -40,9 +49,11 @@ parse_git_branch() {
 
 prompt() {
      exit_code=$?
-     PS1=$(printf "%*s\r%s\n\\u@\H \W: \$(parse_git_branch)" " $[$(tput cols)-5]" "Exit: $exit_code  $(pwd)    $(date)");
+     PS1=$(printf "%*s\r%s\n\\u@\H \W:\$(parse_git_branch) \$(venv) " "$[$(tput cols)-5]" "Exit: $exit_code  $(pwd)    $(date)");
 }
 PROMPT_COMMAND=prompt
+
+
 
 #export PS1="\u@\H \W: ${red} \T ${NC}\$(parse_git_branch) ${NC}"
 
