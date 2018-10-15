@@ -1,0 +1,22 @@
+[user]
+	email = orlandordiaz@gmail.com
+	name = Orlando Reategui Diaz
+[alias]
+	# l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	l = log --graph --pretty=format:'%C(yellow)%h %<(14)%cd %C(blue)%<(25)%an %C(green)%s %C(bold yellow)%d ' -20
+
+	#short-format
+	s = status -s
+
+
+[log]
+  date = relative
+[format]
+    pretty = format:%C(yellow)%h %<(14)%cd %C(blue)%<(25)%an %C(green)%s %C(bold yellow)%d%C(reset)
+
+[color "status"]
+	untracked = black
+	changed = yellow
+	added = green
+
