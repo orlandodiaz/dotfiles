@@ -25,7 +25,6 @@ if [ -f ~/.bash_secrets ]; then
     source ~/.bash_secrets
 fi
 
-source /usr/local/bin/virtualenvwrapper.sh
 
 ################################### STARTUP###################################
 uptime

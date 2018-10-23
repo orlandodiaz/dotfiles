@@ -21,10 +21,12 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 #################################################################################
 
 # MACPORTS PYTHON 2.7
-export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin":$PATH
+#export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin":$PATH
 
 # VISUAL STUDIO CODE (actual binary is called code so rename it to vscode)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # VIRTUALENV WRAPPER
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+
+source /usr/local/bin/virtualenvwrapper.sh
