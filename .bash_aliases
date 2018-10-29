@@ -28,6 +28,7 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 
 ############################### ls #######################################
 # issues: gls may fail to show files in mounted filesystems such as google drive
+# Make sure to add an empty space after every addition below
 ls=""
 # Use GNU ls instead
 ls+="gls "
@@ -45,7 +46,9 @@ ls+="-h "
 #ls+="-i "
 # ignore backups (vim and emacs files created ending with a tilde)
 ls+="--ignore-backups "
-ls+="--ignore='#*'"
+ls+="--ignore='#*' "
+# Ignore python cache
+ls+="--ignore=__pycache__"
 
 
 alias ls=$ls
