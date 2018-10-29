@@ -53,6 +53,44 @@ ls+="--ignore=__pycache__"
 
 alias ls=$ls
 
+########################### tree ######################################
+
+tree="tree "
+# Always show directories first
+tree+="--dirsfirst "
+# Add forward slashes to folders and @ signs to symlinks
+tree+="-F "
+# Ignore certain files or directories
+tree+="-I __pycache__ "
+
+
+alias tree=$tree
+
+
+########################### exa ########################################
+
+lx="exa "
+lx+="-l "
+lx+="--header "
+lx+="--group "
+lx+="--created "
+lx+="--modified "
+lx+="--accessed "
+lx+="--inode "
+lx+="--color=never "
+
+# Add forward slashes to folders and @ signs to symlinks
+lx+="-F "
+lx+="--group-directories-first "
+lx+="-I __pycache__"
+
+alias lx=$lx
+
+
+
+
+
+
 
 ########################### rm #########################################
 rm=""
@@ -78,7 +116,3 @@ fi
 alias lls=$"long_ls ${1}"
 #########################################################################
 
-
-############################### exa #######################################
-
-alias lx="exa -l --header --group --created --modified --accessed --inode --color=never -F --group-directories-first"
