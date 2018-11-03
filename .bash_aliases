@@ -10,8 +10,6 @@ alias code="cd $GDRIVE_HOME/code"
 alias dots="cd $GDRIVE_HOME/dots"
 alias play="cd $GDRIVE_HOME/code/play"
 
-
-
 ###########################################################################################
 alias cd..="cd .."
 alias cd...="cd ..."
@@ -50,8 +48,22 @@ ls+="--ignore='#*' "
 # Ignore python cache
 ls+="--ignore=__pycache__"
 
+########################### ls 2 ######################################
 
 alias ls=$ls
+
+long_ls() {
+
+local VAR="Inode|Permissions|Owner|Group|Size|Modified|Name"
+
+if [ ! "${1}" ]; then
+   echo -e "$VAR" | column -t -s"|" && $ls -l
+else
+   echo -e "$VAR" | column -t -s"|" && $ls -l -i"${1}"
+fi
+}
+
+alias lls=$"long_ls ${1}"
 
 ########################### tree ######################################
 
@@ -93,19 +105,5 @@ rm+="grm "
 # Prompt when removing files and directories (3+ files only) y for yes, n for no
 rm+="-I"
 alias rm=$rm
-
-long_ls() {
-
-local VAR="Inode|Permissions|Owner|Group|Size|Modified|Name"
-
-if [ ! "${1}" ]; then
-   echo -e "$VAR" | column -t -s"|" && $ls -l
-else
-   echo -e "$VAR" | column -t -s"|" && $ls -l -i"${1}"
-fi
-
-}
-
-alias lls=$"long_ls ${1}"
 #########################################################################
 
