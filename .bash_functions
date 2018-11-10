@@ -9,9 +9,6 @@ function items() {
   echo $[$cnt-4]
 }
 
-# cd() { builtin cd "$@" && ~/code/dotfiles/els; }
- cd() { builtin cd "$@" && ls; }
-
 ##############################Running source code############################
 # Currently only CLANg, and objective C is supported
  run() {
@@ -67,3 +64,13 @@ function ff() {
 #  echo $finder_path
   cd "$finder_path"
 }
+################################# cd ########################################
+# This function will overwrite cd! be aware some programs may not work as expected
+# some of those programs: rvm[uncomfirmed]
+# if they depend use the cd functionality into their programs
+
+# Set iTerm2 tab titles
+tabTitle() { echo -ne "\033]0;"$*"\007"; }
+
+# Always list directory contents and set title upon 'cd'
+cd() { builtin cd "$@"; ls; tabTitle ${PWD##*/}; }
