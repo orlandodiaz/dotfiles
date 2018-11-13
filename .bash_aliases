@@ -28,14 +28,14 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 
 ############################### ls #######################################
 # issues: gls may fail to show files in mounted filesystems such as google drive
-# Make sure to add an empty space after every addition below
+# Make sure to add an empty space ad the end of every addition below
 ls=""
 # Use GNU ls instead
 ls+="gls "
 # Group directories first
 ls+="--group-directories-first "
 # Add colors
-ls+="--color=auto "
+ls+="--color=auto "  # if using regular ls you would use the -G flag instead
 # Add forward slashes to folders and @ signs to symlinks
 ls+="-F "
 # No quotes around directories and files with spaces
