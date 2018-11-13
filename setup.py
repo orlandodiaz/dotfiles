@@ -31,7 +31,7 @@ if __name__ == '__main__':
     log.debug('Getting all available dotfiles . . .')
     files = [dotfile for dotfile in os.listdir(DOT_FOLDER)]
 
-    exclusion = ['setup.sh', 'setup.py', 'README.md', 'README', '.git','.DS_Store', '.idea']
+    exclusion = ['setup.sh', 'setup.py', 'README.md', 'README', '.git', '.DS_Store', '.idea']
 
     dotfiles = [file for file in files if file not in exclusion]
 
