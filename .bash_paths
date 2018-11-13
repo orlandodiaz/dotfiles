@@ -1,3 +1,32 @@
+##################################### ##########################################
+#                            README: ADDING TO AN EXISTING PATH
+################################################################################
+#
+# $PATH is the current existing path
+#
+# In order to add to this path you need to define a new PATH variable of the same name
+# The syntax for doing so is by placing a colon(:) in the end or at the beginning 
+#
+# There are two ways to add new paths
+#
+# 1. Adding in front of the existing path ($PATH). The binaries here will overwrite any existing binaries in
+#
+#     Ex PATH="/usr/local/bin:$PATH"
+#
+# 2. By placing your path at the back of the existing path: In this case 
+#    the existing path has preference over what you just added
+#
+#     Ex PATH="$PATH:/ust/local/bin"
+#
+# You can also add multiple path entries to an existing path:
+#
+#     PATH=$PATH:~/opt/bin:~/opt/node/bin
+
+
+
+
+
+
 ################################################################################
 #                               PATH: AUTOMATIC
 ################################################################################
