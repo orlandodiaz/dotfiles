@@ -9,6 +9,8 @@ alias gdrive="cd /Volumes/GoogleDrive/My\ Drive"
 alias code="cd $GDRIVE_HOME/code"
 alias dots="cd $GDRIVE_HOME/dots"
 alias play="cd $GDRIVE_HOME/code/play"
+alias cdpy="cd $GDRIVE_HOME/code/play/python"
+alias django="cd $GDRIVE_HOME/code/play/python/web/django_projects"
 
 ###########################################################################################
 alias cd..="cd .."
