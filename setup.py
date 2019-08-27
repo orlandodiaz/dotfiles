@@ -1,26 +1,13 @@
 import os
 import sys
-import logging as log
+
+from log3 import log
 
 HOME = os.environ['HOME']
-#DOT_FOLDER = "{}/Volumes/GoogleDrive/My Drive/home/dots".format(HOME)
-DOT_FOLDER = "{}/home/ghome/dots".format(HOME)
+print(HOME)
+DOT_FOLDER = os.path.join(HOME, "home/ghome/dots")
 
-# Log to console setingsy
-# set up log to console
-console = log.StreamHandler()
-console.setLevel(log.INFO)
-# set a format which is simpler for console use
-formatter = log.Formatter('[%(asctime)s %(filename)18s] %(levelname)-7s - %(message)7s',
-                          "y"
-                          "%Y-%m-%d %H:%M:%S")
-console.setFormatter(formatter)
-# add the handler to the root logger
-log.getLogger('').addHandler(console)
-
-logger = log.getLogger(__name__)
-
-
+print(DOT_FOLDER)
 if __name__ == '__main__':
 
     cont = False
@@ -31,33 +18,32 @@ if __name__ == '__main__':
     log.debug('Getting all available dotfiles . . .')
     files = [dotfile for dotfile in os.listdir(DOT_FOLDER)]
 
-    exclusion = ['setup.sh', 'setup.py', 'README.md', 'README', '.git', '.DS_Store', '.idea']
+    exclusion = ['setup.sh', 'setup.py', 'README.md', 'README', '.git', '.DS_Store', '.idea', 'Pipfile', 'Pipfile.lock' , 'utils', '.gitignore', 'LICENSE.TXT']
 
     dotfiles = [file for file in files if file not in exclusion]
 
-    print 'Setup found the following dotfiles:'
+    log.info('Setup found the following dotfiles:')
 
     for filename in dotfiles:
-        print '\t' + filename
+        print('\t' + filename)
 
     cont = input(str('Symlinking {} files to {}. Continue? (y/n): '.format(len(dotfiles), HOME)))
 
-    print
     while cont:
 
         # Create symbolic links of dotfiles to home folder
         for filename in dotfiles:
-            print 'Creating symlink for {:<15}'.format(filename),
+            log.info('Creating symlink for {:<15}'.format(filename))
 
             try:
                 os.symlink("{}/{}".format(DOT_FOLDER, filename),
                            "{}/{}".format(HOME, filename)
                            )
             except OSError as ex:
-                print ex
+                log.error(ex)
 
             else:
-                print 'Success'
+                log.success('Success')
 
         log.debug('Finished creating symlinks.')
         log.debug('Exiting...')
