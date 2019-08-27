@@ -36,7 +36,7 @@ ln -s /Users/YOUR_USERNAME/code/dotfiles/.bash_profile ~/
 ```
 
 ## Requirements
-- Python 2.7
+- Python 3.7+
 
 ## Exclude files
 
