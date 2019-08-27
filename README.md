@@ -18,6 +18,11 @@ Run `setup.py`  to symlink these dotfiles files to your home directory.
 
     python setup.py
 
+## IDEs
+If configure Intellij for syntax highlighting, go into the File types menu. Find The bash bourne shell and add the following
+
+    .bash*
+    *.osx
 
 
 ### Manual installation
