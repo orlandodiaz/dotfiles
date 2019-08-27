@@ -20,3 +20,5 @@
 	changed = yellow
 	added = green
 
+[core]
+	autocrlf = input

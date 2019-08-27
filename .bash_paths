@@ -32,6 +32,8 @@
 ################################################################################
 export PATH
 
+
+
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
@@ -59,7 +61,12 @@ export PATH="/usr/local/bin:$PATH"
 # VISUAL STUDIO CODE (actual binary is called code so rename it to vscode)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+
+
 # VIRTUALENV WRAPPER
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+
+
+
 
 source /usr/local/bin/virtualenvwrapper.sh

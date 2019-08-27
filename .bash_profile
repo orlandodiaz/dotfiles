@@ -28,17 +28,21 @@ fi
 
 ################################### STARTUP###################################
 uptime
+echo "$(cat test.txt)"
 
 ################################## JAVA ######################################
 #export JAVA_HOME=$(/usr/libexec/java_home)
 #export PATH=$PATH:$JAVA_HOME/bin
 
+############# JULIA
+export JULIA_LOAD_PATH="~/IdeaProjects"
 
+########
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-################## ITERM ####################################################
-# Show current working diretory in the tab name
-if [ $ITERM_SESSION_ID ]; then
-  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
-fi
+#test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+#
+################### ITERM ####################################################
+## Show current working diretory in the tab name
+#if [ $ITERM_SESSION_ID ]; then
+#  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
+#fi

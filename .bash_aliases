@@ -1,16 +1,20 @@
+
 #@IgnoreInspection BashAddShebang
 GDRIVE_HOME="/Users/orr/home/ghome"
 ############################## Shortcuts ###################################################
-alias home="cd ~"
+alias home="cd ~/home"
 alias ghome="cd $GDRIVE_HOME"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias gdrive="cd /Volumes/GoogleDrive/My\ Drive"
-alias code="cd $GDRIVE_HOME/code"
+alias cdcode="cd $GDRIVE_HOME/code"
 alias dots="cd $GDRIVE_HOME/dots"
 alias play="cd $GDRIVE_HOME/code/play"
 alias cdpy="cd $GDRIVE_HOME/code/play/python"
 alias django="cd $GDRIVE_HOME/code/play/python/web/django_projects"
+
+
+alias heroku-rebuild="git reset HEAD~; git push -f heroku master"
 
 ###########################################################################################
 alias cd..="cd .."
@@ -26,9 +30,12 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 ############################## cd ########################################################
 
 
-############################### ls #######################################
+################################ ls #######################################
 # issues: gls may fail to show files in mounted filesystems such as google drive
 # Make sure to add an empty space ad the end of every addition below
+
+unalias ls
+
 ls=""
 # Use GNU ls instead
 ls+="gls "
@@ -37,22 +44,71 @@ ls+="--group-directories-first "
 # Add colors
 ls+="--color=auto "  # if using regular ls you would use the -G flag instead
 # Add forward slashes to folders and @ signs to symlinks
-ls+="-F "
+#ls+="-F "
 # No quotes around directories and files with spaces
 ls+="-N "
-# Display file sizes in readable format, e.g. 1k, 100MB, 1G
-ls+="-h "
-# Add an inode column
-#ls+="-i "
 # ignore backups (vim and emacs files created ending with a tilde)
 ls+="--ignore-backups "
 ls+="--ignore='#*' "
 # Ignore python cache
 ls+="--ignore=__pycache__"
 
-########################### ls 2 ######################################
 
-alias ls=$ls
+
+########################### ls -l ######################################
+
+# =============ACTIVE====================
+
+lsl=""
+
+# Use GNU ls instead
+lsl+="gls -l "
+
+# Add colors
+lsl+="--color=auto "  # if using regular ls you would use the -G flag instead
+
+# Group directories first
+lsl+="--group-directories-first "
+
+# Display file sizes in readable format, e.g. 1k, 100MB, 1G
+lsl+="-h "
+
+# No quotes around directories and files with spaces
+lsl+="-N "
+
+# ignore backups (vim and emacs files created ending with a tilde)
+lsl+="--ignore-backups "
+lsl+="--ignore='#*' "
+# Ignore python cache
+lsl+="--ignore=__pycache__ "
+#
+##===============INACTIVE=================
+## Add an inode column
+##ls+="-i "
+#
+## Add forward slashes to folders and @ signs to symlinks
+##ls+="-F "
+
+#alias ls=$ls
+#alias lsl=$lsl
+
+ls() {
+    if [[ $@ == "-l" ]]; then
+#        echo $1
+#        echo "hello world"
+        eval $lsl $@
+    else
+#        echo "no l found"
+        eval $ls $@
+    fi
+}
+
+
+
+
+
+########################### ls 2 #######################################
+
 
 long_ls() {
 
