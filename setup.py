@@ -1,6 +1,5 @@
 import os
 import sys
-
 from log3 import log
 
 HOME = os.environ['HOME']
@@ -33,18 +32,18 @@ if __name__ == '__main__':
 
         # Create symbolic links of dotfiles to home folder
         for filename in dotfiles:
-            log.info('Creating symlink for {:<15}'.format(filename))
+            print('Creating symlink for {:<15}'.format(filename), end="")
 
             try:
                 os.symlink("{}/{}".format(DOT_FOLDER, filename),
                            "{}/{}".format(HOME, filename)
                            )
-            except OSError as ex:
-                log.error(ex)
+            except FileExistsError as ex:
+                print(ex)
 
             else:
-                log.success('Success')
+                print('Success')
 
-        log.debug('Finished creating symlinks.')
-        log.debug('Exiting...')
+        # log.debug('Finished creating symlinks.')
+        # log.debug('Exiting...')
         sys.exit(0)
